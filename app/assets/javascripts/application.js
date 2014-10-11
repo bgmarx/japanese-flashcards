@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
+
+$('#next-card').on('click', function() {
+  location.reload();
+});
+
+$(function(){ $(document).foundation(); });

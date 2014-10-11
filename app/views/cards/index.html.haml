@@ -1,0 +1,22 @@
+.row
+  .small-12.small-centered.large-4.large-centered.columns
+    .flip-container{:ontouchstart => "this.classList.toggle('hover');"}
+      .flipper
+        .front
+          %span.word=@card["kanji"]
+        .back{:style => "padding-top: 20%;"}
+          .row
+            .small-10.small-centered.large-4.large-centered.columns
+              %h5.text-center.subheader Onyomi
+              .text-center=@card["onyomi"].join(", ")
+          .row
+            .small-10.small-centered.large-8.large-centered.columns
+              %h5.text-center.subheader Kunyomi
+              .text-center=@card["kunyomi"].join(", ")
+          .row
+            .small-10.small-centered.large-8.large-centered.columns
+              %h5.text-center.subheader Definitions
+              .text-center=@card["definitions"].join(", ")
+.row
+  .small-12.small-centered.large-4.large-centered.columns
+    %a.button.expand#next-card{:href => "#", :style => "width: 106%"} Load Next Card

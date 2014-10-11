@@ -8,9 +8,16 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'traceroute'
-
+gem 'foundation-rails'
 gem 'faraday'
 gem 'haml'
 
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'spring'
+end
+
+gem 'rubocop', require: false
+gem 'rails_12factor', group: :production
+ruby "2.1.2"
