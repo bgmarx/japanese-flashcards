@@ -11,6 +11,7 @@ gem 'traceroute'
 gem 'foundation-rails'
 gem 'faraday'
 gem 'haml'
+gem 'unicorn'
 
 group :development do
   gem 'better_errors'
@@ -21,3 +22,4 @@ end
 gem 'rubocop', require: false
 gem 'rails_12factor', group: :production
 ruby "2.1.2"
+
