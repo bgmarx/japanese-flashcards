@@ -43,11 +43,13 @@ class CardsController < ApplicationController
   end
 
   def url
-    if Rails.env == "development"
-      "http://localhost:4000/"
-    else
+    #if Rails.env == "development"
+    #  "http://localhost:4000/"
+    #else
+    #"http://dry-refuge-1311.herokuapp.com/"
+    #end
     "http://dry-refuge-1311.herokuapp.com/"
-    end
+
   end
 
   def get_cards

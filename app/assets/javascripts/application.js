@@ -19,4 +19,14 @@ $('#next-card').on('click', function() {
   location.reload();
 });
 
+$('.front').on('click', function() {
+  $('.front').animate({width:'toggle'},350);
+  $('.back').slideToggle();
+});
+
+$('.back').on('click', function() {
+  $('.back').slideUp();
+  $('.front').slideDown();
+});
+
 $(function(){ $(document).foundation(); });
