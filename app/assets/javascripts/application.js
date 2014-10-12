@@ -20,7 +20,6 @@ $('#next-card').on('click', function() {
 });
 
 $('#flip-card').on('click', function() {
-  console.log('here');
   $('.back').toggleClass('hide');
   $('.front').toggleClass('hide');
 });
