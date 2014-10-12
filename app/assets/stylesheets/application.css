@@ -8,8 +8,9 @@
 
 .word { font-size: 15em; }
 .flip-container {
+    height: 380px;
 }
-
+.back { padding-top: 20%; }
 .flip-container, .front, .back {
 
 }

@@ -19,14 +19,10 @@ $('#next-card').on('click', function() {
   location.reload();
 });
 
-$('.front').on('click', function() {
-  $('.front').animate({width:'toggle'},350);
-  $('.back').slideToggle();
-});
-
-$('.back').on('click', function() {
-  $('.back').slideUp();
-  $('.front').slideDown();
+$('#flip-card').on('click', function() {
+  console.log('here');
+  $('.back').toggleClass('hide');
+  $('.front').toggleClass('hide');
 });
 
 $(function(){ $(document).foundation(); });
