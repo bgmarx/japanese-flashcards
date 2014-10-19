@@ -7,6 +7,9 @@
  */
 
 .word { font-size: 15em; }
+.vocab { font-size: 12em; }
+.small-vocab { font-size: 4em; }
+.small-word { font-size: 9em; }
 .flip-container {
     height: 380px;
 }

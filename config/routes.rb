@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :cards, only: [:new, :show, :index]
+  root to: 'home#index'
+
+  resources :kanji,        only: [:new, :show, :index]
+  resources :vocabularies, only: [:new, :show, :index]
 end

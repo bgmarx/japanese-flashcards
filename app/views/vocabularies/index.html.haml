@@ -1,0 +1,27 @@
+=raise @card.inspect
+.row
+  .small-10.small-centered.large-10.large-centered.columns
+    .flip-container{:ontouchstart => "this.classList.toggle('hover');"}
+      .flipper
+        .front
+          .show-for-small-only.small-vocab.text-center=@card["kana"]
+          .show-for-medium-up.vocab.text-center=@card["kanji"]
+        .back.hide
+          -unless @card["kanji"] == "-"
+            .row
+              .small-10.small-centered.large-4.large-centered.columns
+                %h5.text-center.subheader Kanji
+                .text-center=@card["kana"]
+          .row
+            .small-10.small-centered.large-8.large-centered.columns
+              %h5.text-center.subheader Grammar Type
+              .text-center=@card["grammar_type"]
+          .row
+            .small-10.small-centered.large-8.large-centered.columns
+              %h5.text-center.subheader Definitions
+              .text-center=@card["definitions"].join(", ")
+.row
+  .small-7.large-8.columns
+    %a.button.expand#next-card{:href => "#"} Load Next Card
+  .small-5.large-4.columns
+    %a.button.expand#flip-card{:href => "#"} Flip Card
