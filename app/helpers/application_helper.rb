@@ -1,9 +1,6 @@
 module ApplicationHelper
-  def display_array(array,el)
-    if array.last == el
-      #{el}
-    else
-      "#{el}, "
-     end
+
+  def get_vocab(card)
+    card["kanji"] == "-" ? card["kana"] : card["kanji"]
   end
 end

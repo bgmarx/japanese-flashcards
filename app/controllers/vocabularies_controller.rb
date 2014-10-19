@@ -2,7 +2,7 @@ class VocabulariesController < ApplicationController
   before_action :get_cards, only: :index
 
   def index
-    @card = @cards["vocabulary"][rand(@cards.size)]
+    @card = @cards[rand(@cards.size)]
     @card
   end
 
@@ -34,6 +34,8 @@ class VocabulariesController < ApplicationController
   end
 
   def get_cards
-    @cards ||= ActiveSupport::JSON.decode api_get_connection.body
+    @cards = ActiveSupport::JSON.decode api_get_connection.body
+    @cards = @cards["vocabulary"]
+    @cards
   end
 end

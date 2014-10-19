@@ -1,4 +1,14 @@
 .row
   .small-10.small-centered.large-4.large-centered.columns
-    =link_to 'Kanji', kanji_index_path(level: "5")
-    =link_to 'Vocabularies', vocabularies_path(level: "5")
+
+    %h5.text-center.subheader Kanji
+    .text-center=link_to 'Kanji Level 5' , kanji_index_path(level: 5)
+    .text-center=link_to 'Kanji Level 4' , kanji_index_path(level: 4)
+    .text-center=link_to 'Kanji Level 3' , kanji_index_path(level: 3)
+    .text-center=link_to 'Kanji Level 2' , kanji_index_path(level: 2)
+.row
+  .small-10.small-centered.large-4.large-centered.columns
+    %h5.text-center.subheader Vocabulary
+    .text-center=link_to 'Vocabulary Level 5', vocabularies_path(level: 5)
+    .text-center=link_to 'Vocabulary Level 4', vocabularies_path(level: 4)
+    .text-center=link_to 'Vocabulary Level 2 & 3', vocabularies_path(level: 2)

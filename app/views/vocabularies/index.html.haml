@@ -1,17 +1,15 @@
-=raise @card.inspect
 .row
   .small-10.small-centered.large-10.large-centered.columns
-    .flip-container{:ontouchstart => "this.classList.toggle('hover');"}
+    .flip-container
       .flipper
         .front
-          .show-for-small-only.small-vocab.text-center=@card["kana"]
-          .show-for-medium-up.vocab.text-center=@card["kanji"]
-        .back.hide
-          -unless @card["kanji"] == "-"
-            .row
-              .small-10.small-centered.large-4.large-centered.columns
-                %h5.text-center.subheader Kanji
-                .text-center=@card["kana"]
+          .show-for-small-only.small-vocab.text-center=get_vocab(@card)
+          .show-for-medium-up.vocab.text-center=get_vocab(@card)
+        .back.vocab-back.hide
+          .row
+            .small-10.small-centered.large-4.large-centered.columns
+              %h5.text-center.subheader Kanji
+              .text-center=@card["kana"]
           .row
             .small-10.small-centered.large-8.large-centered.columns
               %h5.text-center.subheader Grammar Type
@@ -25,3 +23,6 @@
     %a.button.expand#next-card{:href => "#"} Load Next Card
   .small-5.large-4.columns
     %a.button.expand#flip-card{:href => "#"} Flip Card
+.row
+  .small-4.large-4.columns.small-centered
+    %a.text-center.button.expand{:href => "/"} Home
