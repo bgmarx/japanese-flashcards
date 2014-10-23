@@ -2,8 +2,7 @@ class KanjiController < ApplicationController
   before_action :get_cards, only: :index
 
   def index
-    @card = @cards[rand(@cards.size)]
-    @card
+    @card = kanji_card.merge(page_total)
   end
 
   def new
@@ -13,10 +12,6 @@ class KanjiController < ApplicationController
   end
 
   protected
-
-  def get_cards
-    Faraday.new
-  end
 
   def api_connection
     Faraday.new(:url => url, :ssl => { :verify => false }) do |faraday|
@@ -41,13 +36,23 @@ class KanjiController < ApplicationController
     response
   end
 
+
+  def kanji_card
+    @paginated_cards = @cards["kanji"]["kanji_card"]
+    @paginated_cards[rand(@paginated_cards.size)]
+  end
+
+  def page_total
+    { total_num_pages: @cards["kanji"]["kanji_page_total"] }
+  end
+
   def url
     #if Rails.env == "development"
-    #  "http://localhost:4000/"
+    "http://localhost:4000/"
     #else
     #"http://dry-refuge-1311.herokuapp.com/"
     #end
-    "http://dry-refuge-1311.herokuapp.com/"
+    #"http://dry-refuge-1311.herokuapp.com/"
 
   end
 
