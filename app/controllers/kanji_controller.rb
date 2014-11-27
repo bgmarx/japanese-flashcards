@@ -48,9 +48,9 @@ class KanjiController < ApplicationController
 
   def url
     #if Rails.env == "development"
-    "http://localhost:4000/"
+    #"http://localhost:4000/"
     #else
-    #"http://dry-refuge-1311.herokuapp.com/"
+    "http://dry-refuge-1311.herokuapp.com/"
     #end
     #"http://dry-refuge-1311.herokuapp.com/"
 

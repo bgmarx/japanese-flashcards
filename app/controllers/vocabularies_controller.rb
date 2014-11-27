@@ -38,8 +38,8 @@ class VocabulariesController < ApplicationController
   end
 
   def url
-    "http://localhost:4000/"
-    #"http://dry-refuge-1311.herokuapp.com/"
+    #"http://localhost:4000/"
+    "http://dry-refuge-1311.herokuapp.com/"
   end
 
   def get_cards
